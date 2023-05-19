@@ -7,7 +7,7 @@ export const SearchBar = () => {
 
     return (
         <div
-            className="fixed w-full lg:w-10/12 pt-2 pb-5"
+            className="fixed w-full lg:w-10/12 pt-2 pb-5 z-10"
             style={{
                 backgroundImage: `url(${background})`,
                 backgroundSize: "cover",
