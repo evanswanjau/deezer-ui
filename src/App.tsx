@@ -1,4 +1,14 @@
-import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Home } from "./pages/home";
+
 export const App = () => {
-    return <div>hello world</div>;
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    );
 };
