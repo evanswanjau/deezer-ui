@@ -1,5 +1,4 @@
-const App = () => {
+import React from "react";
+export const App = () => {
     return <div>hello world</div>;
 };
-
-export default App;
