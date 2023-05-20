@@ -16,19 +16,19 @@ export const Track = ({
 }) => {
     return (
         <Link
-            to={"/?track=" + track.replace(/ /g, "-")}
+            to={"/artist/" + artist.replace(/ /g, "-")}
             className="text-white space-y-0.5 group"
         >
             <img
                 className="rounded-lg shadow-md mb-5 group-hover:shadow-green-400 group-hover:scale-[1.02] transition duration-200 ease-in-out"
                 src={`images/${image}`}
             />
-            <div className="group-hover:text-green-400 transition duration-150 ease-in-out">
-                <p>{duration}</p>
-                <p>{capitalizeFL(track)}</p>
-                <p className="hidden lg:block">{capitalizeFL(album)}</p>
-                <p>{capitalizeFL(artist)}</p>
-            </div>
+            <p className="text-sm">{duration}</p>
+            <h4 className="text-lg font-bold">{capitalizeFL(track)}</h4>
+            <p className="tracking-wide hidden lg:block">{capitalizeFL(album)}</p>
+            <p className="tracking-wide group-hover:text-green-400 transition duration-150 ease-in-out">
+                {capitalizeFL(artist)}
+            </p>
         </Link>
     );
 };
