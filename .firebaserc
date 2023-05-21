@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "deezer-project"
-  }
+    "default": "deezer-project",
+    "production": "deezer-project",
+    "development": "deezer-project"
+  },
+  "targets": {},
+  "etags": {}
 }
