@@ -1,19 +1,23 @@
+import { compactNumber } from "../helpers/integers";
+
 export const ArtistHeader = ({
+    id,
     name,
-    fans,
+    nb_fan, // eslint-disable-line
     bio,
-    image,
+    picture_medium, // eslint-disable-line
 }: {
+    id: number;
     name: string;
-    fans: number;
+    nb_fan: number;
     bio: string;
-    image: string;
+    picture_medium: string;
 }) => {
     return (
         <div
-            className="w-8/12 mx-3 rounded-xl shadow-md shadow-green-400"
+            className="w-full lg:w-8/12 m-3 rounded-xl shadow-md"
             style={{
-                backgroundImage: `url('/images${image}')`,
+                backgroundImage: `url('${picture_medium}')`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
@@ -23,7 +27,9 @@ export const ArtistHeader = ({
                 <div className="w-10/12 text-white">
                     <h4 className="font-bold text-6xl capitalize">{name}</h4>
                     <p className="border-b-2 border-gray-600 w-fit py-5">
-                        <span className="font-bold">{fans} </span>
+                        <span className="font-bold">
+                            {compactNumber(nb_fan)}{" "}
+                        </span>
                         fans
                     </p>
                     <p className="mt-8">{bio}</p>
