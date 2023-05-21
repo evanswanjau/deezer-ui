@@ -1,34 +1,39 @@
 import { Link } from "react-router-dom";
 import { capitalizeFL } from "../helpers/strings";
+import { secondsToTime } from "../helpers/date";
 
 export const Track = ({
+    id,
+    title,
     duration,
-    track,
-    artist,
     album,
-    image,
+    artist,
+    cover_medium, // eslint-disable-line
 }: {
-    duration: string;
-    track: string;
-    artist: string;
+    id: number;
+    title: string;
+    duration: number;
     album: string;
-    image: string;
+    artist: string;
+    cover_medium: string;
 }) => {
     return (
-        <Link
-            to={"/artist/" + artist.replace(/ /g, "-")}
-            className="text-white space-y-0.5 group"
-        >
+        <div className="text-white space-y-0.5 group">
             <img
                 className="rounded-lg shadow-md mb-5 group-hover:shadow-green-400 group-hover:scale-[1.02] transition duration-200 ease-in-out"
-                src={`images/${image}`}
+                src={cover_medium}
             />
-            <p className="text-sm">{duration}</p>
-            <h4 className="text-lg font-bold">{capitalizeFL(track)}</h4>
-            <p className="tracking-wide hidden lg:block">{capitalizeFL(album)}</p>
-            <p className="tracking-wide group-hover:text-green-400 transition duration-150 ease-in-out">
-                {capitalizeFL(artist)}
+            <p className="text-sm">{secondsToTime(duration)}</p>
+            <h4 className="text-lg font-bold">{capitalizeFL(title)}</h4>
+            <p className="tracking-wide hidden lg:block">
+                {capitalizeFL(album)}
             </p>
-        </Link>
+            <Link
+                to={"/artist/" + artist.replace(/ /g, "-")}
+                className="tracking-wide hover:text-green-400 transition duration-150 ease-in-out"
+            >
+                {artist}
+            </Link>
+        </div>
     );
 };
