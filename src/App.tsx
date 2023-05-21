@@ -6,7 +6,7 @@ export const App = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/artist/:name" component={ArtistPage} />
+                <Route path="/artist/:id/:name" component={ArtistPage} />
                 <Route exact path="/" component={Home}/>
             </Switch>
         </BrowserRouter>
