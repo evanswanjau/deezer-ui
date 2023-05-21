@@ -12,6 +12,7 @@
     },
     "plugins": ["react", "react-hooks"],
     "rules": {
+        "multiline-ternary": "off",
         "@typescript-eslint/member-delimiter-style": "off",
         "@typescript-eslint/comma-dangle": "off",
         "quotes": "off",
