@@ -29,7 +29,7 @@ export const Track = ({
                 {capitalizeFL(album)}
             </p>
             <Link
-                to={"/artist/" + artist.replace(/ /g, "-")}
+                to={`/artist/${id}/${artist.replace(/ /g, "-")}`}
                 className="tracking-wide hover:text-green-400 transition duration-150 ease-in-out"
             >
                 {artist}
