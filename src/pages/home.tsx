@@ -14,7 +14,7 @@ interface Track {
 
 export const Home = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [keyword, setKeyword] = useState<string>("track");
+    const [keyword, setKeyword] = useState<string>("");
     const [data, setData] = useState<Track[]>([]);
 
     return (
