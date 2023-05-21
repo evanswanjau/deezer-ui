@@ -22,7 +22,7 @@ export const SearchBar = ({
             if (keyword !== "") {
                 axios
                     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-                    .post(`${process.env.REACT_APP_API_URL}/search/tracks`, {
+                    .post(`${process.env.REACT_APP_API_URL}/search/track`, {
                         keyword,
                     })
                     .then((response) => {
